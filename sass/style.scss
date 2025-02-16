@@ -10,7 +10,65 @@ html {
 	font-size: 62.5%;
 }
 body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Roboto', serif;
 	height: 100vh;
-	width: 100vw;
 	background: colors.$primary-gradient;
+}
+.card {
+	position: relative;
+	width: 24em;
+	height: 40em;
+	background-image: url('../img/photography.jpg');
+	background-position: center;
+	background-size: cover;
+	box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5);
+	&__btn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		color: #fff;
+		background: none;
+		border: none;
+		font-size: 3rem;
+		padding: 1em;
+		cursor: crosshair;
+		z-index: 1;
+		&:hover ~ .card__text {
+			clip-path: circle(50% at 50% 70%);
+		}
+	}
+	&__text {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-direction: column;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		clip-path: circle(0% at 50% 70%);
+		transition: clip-path 0.3s;
+	}
+	&__title {
+		font-size: 3rem;
+		padding: 0.3em;
+		color: #d8a91b;
+	}
+	&__title-name {
+		padding: 0.3em;
+		font-size: 1.8rem;
+		color: #ecbd66;
+	}
+	&__info {
+		color: #fff;
+		font-size: 1.2rem;
+		padding: 0.3em 1.2em;
+		text-align: center;
+		margin-bottom: 3em;
+	}
 }
